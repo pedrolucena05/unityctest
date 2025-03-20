@@ -54,7 +54,7 @@ O proprio compilador GCC tem ferramentas nativas de lcov e gcov.
 
 Pode ser usado para testes de sistemas embarcados, segue um algortmo de exemplo:
 
-```#ifdef UNIT_TEST
+```cpp #ifdef UNIT_TEST
 #include "unity.h"
 #else
 #include <Arduino.h>
@@ -99,8 +99,9 @@ int main(void) {
 
 #else
 
-// Código da aplicação```
+// Código da aplicação
+```  
 
-No exemplo acima a flag "#ifdef UNIT_TEST" executa o código até a flag "#else" caso na build do firmware tenha a tag -DUNIT_TEST, então o código executa o trecho acima e retorma uma mensagem na serial com o resultado do teste. Para rodar o código normalmente basta tirar o -DUNIT_TEST da build do firmware.
+### No exemplo acima a flag "#ifdef UNIT_TEST" executa o código até a flag "#else" caso na build do firmware tenha a tag -DUNIT_TEST, então o código executa o trecho acima e retorma uma mensagem na serial com o resultado do teste. Para rodar o código normalmente basta tirar o -DUNIT_TEST da build do firmware.
 
  
