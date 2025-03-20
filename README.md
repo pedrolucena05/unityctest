@@ -5,13 +5,13 @@ O Unity pode ser utilizado com qualquer projeto em c, mas devido a sua compatibi
 
 ## Organizando o ambiente
 
-Primeiramente é necessário baixar a biblioteca no site (https://github.com/ThrowTheSwitch/Unity/archive/refs/heads/master.zip) 
+Primeiramente é necessário baixar a biblioteca no site (https://github.com/ThrowTheSwitch/Unity/archive/refs/heads/master.zip)   
 Obs: O link acima instala a biblioteca Unity diretamente.
 
-Após instalar extraia a pasta para o diretório desejado, não precisa ser no diretório do projeto.  
+Após instalar, extraia a pasta para o diretório desejado, não precisa ser no diretório do projeto.  
 
-No diretório onde esta o projeto que você irá fazer os testes, será necessário fazer o um include dos arquivos .c e .h do framework,
-você pode referencia-los no seu arquivo de testes da seguinte forma:
+No diretório onde está o projeto, será necessário fazer o um include dos arquivos unity.c e unity.h,
+que podem ser referenciados da seguinte forma:
 
 "  
 #include <stdio.h> // includes necessários para o teste  
@@ -22,7 +22,7 @@ você pode referencia-los no seu arquivo de testes da seguinte forma:
 // bloco de testes  
 "  
 
-Ou copie e cole os arquivos unity.c e unity.h no diretórios onde serão feito os testes referenciando no arquivo de testes apenas com (#include "unity.h").
+Ou copie e cole os arquivos unity.c e unity.h no diretórios onde serão feito os testes referenciando-os no arquivo de testes apenas com (#include "unity.h").
 
 ## Ferramentas do Unity (setUp e Teardown)
 
@@ -38,16 +38,16 @@ Então o algoritmo do Unity verifica se existem essas duas funções e faz o pro
 No unity.h tem detalhado todos os asserts, Segue alguns asserts importantes:
 
 TEST_ASSERT_EQUAL_INT(expected, actual) // verifica 2 valores, se o resultado for igual o teste passa, se não o teste falha.  
-TEST_ASSERT_EQUAL_INT(i+j, add(i,j)); // Pode ser usado funções e valores no expected e actual.  
+TEST_ASSERT_EQUAL_INT(i+j, add(i,j)); // Pode ser usado funções e expressões numéricas no expected e actual.  
 
-TEST_ASSERT_EQUAL_UINT8(expected, actual) // O Unity converte os valores para o tipo especificado antes de fazer o teste.  
+TEST_ASSERT_EQUAL_UINT8(expected, actual) // O Unity converte os valores para o tipo especificado antes de fazer o teste (assim como nos tests acima).  
 
 TEST_FAIL() // Utilizado para fazer manualmente os testes, executando algoritmos e determinando se o teste falhou.  
 TEST_IGNORE(): // Ignora o teste, nem passa e nem falha.
 
 ## Ferramentas de cobertura
 
-O Unity não tem testes de cobertura de código, mas pode ser intregados a ferramentas que tem o teste de cobertura (Ceedling por exemplo).
+O Unity não tem testes de cobertura de código, mas pode ser intregados a ferramentas que tem o teste (Ceedling por exemplo).  
 O proprio compilador GCC tem ferramentas nativas de lcov e gcov.
 
 ## Particularidade da ferramenta
@@ -102,6 +102,39 @@ int main(void) {
 // Código da aplicação
 ```  
 
-No exemplo acima a flag "#ifdef UNIT_TEST" executa o código até a flag "#else" caso na build do firmware tenha a tag -DUNIT_TEST, então o código executa o trecho acima e retorma uma mensagem na serial com o resultado do teste. Para rodar o código normalmente basta tirar o -DUNIT_TEST da build do firmware.
+No exemplo acima, caso na build do firmware tenha a tag -DUNIT_TEST, a flag "#ifdef UNIT_TEST" executa o código até a flag "#else", retornando uma mensagem na serial com o resultado do teste. Para rodar o código normalmente basta tirar o -DUNIT_TEST da build do firmware.
 
- 
+## Resultados do teste 
+
+Os resultados do teste ficam da seguinte forma:
+
+PS C:\Users\peusu\Desktop\Stellantis\automacaoTestes\Projeto Final (Unity)> .\test_sum.exe
+test_sum.c:31:test_AddPositiveNumbers:PASS
+test_sum.c:32:test_AddNegativeNumbers:PASS
+test_sum.c:33:test_AddMixedNumbers:PASS
+test_sum.c:34:test_AddZero:PASS
+test_sum.c:35:test_AddLargeNumbers:PASS
+
+-----------------------
+5 Tests 0 Failures 0 Ignored
+OK
+
+Exemplo com falha:
+
+PS C:\Users\peusu\Desktop\Stellantis\automacaoTestes\Projeto Final (Unity)> .\test_sum2
+test_example.c:31:test_add:PASS
+test_example.c:24:test_add_2:FAIL
+
+-----------------------
+2 Tests 1 Failures 0 Ignored
+FAIL
+
+Detalho a build no diretório exemplo.
+
+## Desvantagens de usar o Unity
+
+O Unity é um framework simples e minimalista. Acaba sendo necessário a integração com outras ferramentas (por exemplo, CMock) para essas funcionalidades mais complexas.
+
+Configurar o ambiente de build para compilar, linkar e carregar os testes no hardware (sistemas embarcados) ou em simuladores pode ser trabalhoso, principalmente para quem está começando.
+
+Os relatórios gerados pelo Unity são geralmente simples e baseados em saída serial ou texto, o que pode ser menos amigável comparado a frameworks com interfaces visuais ou relatórios integrados.
