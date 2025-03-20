@@ -13,14 +13,14 @@ Após instalar extraia a pasta para o diretório desejado, não precisa ser no d
 No diretório onde esta o projeto que você irá fazer os testes, será necessário fazer o um include dos arquivos .c e .h do framework,
 você pode referencia-los no seu arquivo de testes da seguinte forma:
 
-"
+"  
 #include <stdio.h> // includes necessários para o teste  
 #include <assert.h>  
 #include "C:\caminho-do-arquivo\src\unity.h" // caminho onde esta a biblioteca unity  
 #include "C:\caminho-do-arquivo\src\unity.c"  
 
-// bloco de testes
-"
+// bloco de testes  
+"  
 
 Ou copie e cole os arquivos unity.c e unity.h no diretórios onde serão feito os testes refereniando apenas com o (#include "unity.h")
 
