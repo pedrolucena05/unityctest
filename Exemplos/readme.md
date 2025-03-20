@@ -1,6 +1,6 @@
 ## Como rodar o arquivo de testes
 
-Para executar o código corretamente basta copiar os arquivos unity.c unity.h e unity_internals.h e executar o comando
+Para executar o código corretamente basta copiar os arquivos unity.c unity.h e unity_internals.h (estão na pasta src da pasta da biblioteca Unity) e executar o comando
 
 gcc -DUNIT_TEST -o test_sum2 test_example.c sum.c unity.c -lm
 
