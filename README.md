@@ -110,7 +110,6 @@ test_sum.c:33:test_AddMixedNumbers:PASS
 test_sum.c:34:test_AddZero:PASS
 test_sum.c:35:test_AddLargeNumbers:PASS
 
------------------------
 5 Tests 0 Failures 0 Ignored  
 OK
 
@@ -120,7 +119,6 @@ PS C:\Users\peusu\Desktop\Stellantis\automacaoTestes\Projeto Final (Unity)> .\te
 test_example.c:31:test_add:PASS
 test_example.c:24:test_add_2:FAIL
 
------------------------
 2 Tests 1 Failures 0 Ignored  
 FAIL
 
