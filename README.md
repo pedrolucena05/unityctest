@@ -64,21 +64,15 @@ Pode ser usado para testes de sistemas embarcados, segue um algortmo de exemplo:
 #define LED_PIN 13
 #define SENSOR_PIN A0
 
-// Função da aplicação: determina o estado do LED
 // Retorna HIGH se o valor do sensor for menor que 10, caso contrário retorna LOW.
 int computeLEDState(int sensorValue) {
     return (sensorValue < 10) ? HIGH : LOW;
 }
 
 #ifdef UNIT_TEST
-// ====================
-// Bloco de Testes Unitários
-// ====================
 
-// setUp() é executado antes de cada teste
 void setUp(void) {}
 
-// tearDown() é executado depois de cada teste
 void tearDown(void) {}
 
 // Teste 1: Se o valor do sensor for 5 (< 10), o LED deve acender (HIGH)
