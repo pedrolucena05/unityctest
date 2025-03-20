@@ -103,23 +103,23 @@ No exemplo acima, caso na build do firmware tenha a tag -DUNIT_TEST, o codigo ex
 
 Os resultados do teste ficam da seguinte forma:
 
-PS C:\Users\peusu\Desktop\Stellantis\automacaoTestes\Projeto Final (Unity)> .\test_sum.exe
-test_sum.c:31:test_AddPositiveNumbers:PASS
-test_sum.c:32:test_AddNegativeNumbers:PASS
-test_sum.c:33:test_AddMixedNumbers:PASS
-test_sum.c:34:test_AddZero:PASS
-test_sum.c:35:test_AddLargeNumbers:PASS
+PS C:\Users\peusu\Desktop\Stellantis\automacaoTestes\Projeto Final (Unity)> .\test_sum.exe  
+test_sum.c:31:test_AddPositiveNumbers:PASS  
+test_sum.c:32:test_AddNegativeNumbers:PASS  
+test_sum.c:33:test_AddMixedNumbers:PASS  
+test_sum.c:34:test_AddZero:PASS  
+test_sum.c:35:test_AddLargeNumbers:PASS  
 
 5 Tests 0 Failures 0 Ignored  
 OK
 
 Exemplo com falha:
 
-PS C:\Users\peusu\Desktop\Stellantis\automacaoTestes\Projeto Final (Unity)> .\test_sum2
-test_example.c:31:test_add:PASS
-test_example.c:24:test_add_2:FAIL
+PS C:\Users\peusu\Desktop\Stellantis\automacaoTestes\Projeto Final (Unity)> .\test_sum2  
+test_example.c:31:test_add:PASS  
+test_example.c:24:test_add_2:FAIL  
 
-2 Tests 1 Failures 0 Ignored  
+2 Tests 1 Failures 0 Ignored    
 FAIL
 
 Detalho a build no diretório exemplo.
