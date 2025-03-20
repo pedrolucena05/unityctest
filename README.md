@@ -126,7 +126,7 @@ Detalho a build no diretório exemplo.
 
 ## Desvantagens de usar o Unity
 
-O Unity é um framework simples e minimalista. Acaba sendo necessário a integração com outras ferramentas (por exemplo, CMock) para essas funcionalidades mais complexas.
+O Unity é um framework simples e minimalista. Acaba sendo necessário a integração com outras ferramentas (por exemplo, CMock) para uso de funcionalidades mais complexas.
 
 Configurar o ambiente de build para compilar, linkar e carregar os testes no hardware (sistemas embarcados) ou em simuladores pode ser trabalhoso, principalmente para quem está começando.
 
