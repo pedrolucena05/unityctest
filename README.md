@@ -54,7 +54,8 @@ O proprio compilador GCC tem ferramentas nativas de lcov e gcov.
 
 Pode ser usado para testes de sistemas embarcados, segue um algortmo de exemplo:
 
-```cpp #ifdef UNIT_TEST
+```cpp
+#ifdef UNIT_TEST
 #include "unity.h"
 #else
 #include <Arduino.h>
