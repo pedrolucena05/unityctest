@@ -47,7 +47,7 @@ TEST_IGNORE(): // Ignora o teste, nem passa e nem falha.
 
 ## Ferramentas de cobertura
 
-O Unity não tem testes de cobertura de código, mas pode ser intregados a ferramentas que tenham o teste (Ceedling por exemplo).  
+O Unity não tem testes de cobertura de código, mas pode ser intregado a ferramentas que tenham o teste (Ceedling por exemplo).  
 O próprio compilador GCC tem ferramentas nativas de lcov e gcov.
 
 ## Particularidade da ferramenta
