@@ -103,7 +103,7 @@ int main(void) {
 // Código da aplicação
 ```  
 
-No exemplo acima, caso na build do firmware tenha a tag -DUNIT_TEST, a flag "#ifdef UNIT_TEST" executa o código até a flag "#else", retornando uma mensagem na serial com o resultado do teste. Para rodar o código normalmente basta tirar o -DUNIT_TEST da build do firmware.
+No exemplo acima, caso na build do firmware tenha a tag -DUNIT_TEST, o codigo executa da flag "#ifdef UNIT_TEST" até a flag "#else", retornando uma mensagem na serial com o resultado do teste e parando a execução. Para rodar o código normalmente basta tirar o -DUNIT_TEST da build do firmware.
 
 ## Resultados do teste 
 
